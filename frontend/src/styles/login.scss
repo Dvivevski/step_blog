@@ -1,0 +1,86 @@
+.login {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  @include bgGradient;
+
+  &_form {
+    &-title {
+      color: white;
+      font-size: 2rem;
+    }
+
+    &-field {
+      & > input {
+        background-color: transparent;
+        outline: unset;
+        border: unset;
+        border: 2px solid rgb(255, 255, 255);
+        padding: 0.5rem 1rem;
+        margin: 1rem 0;
+        border-radius: 5px;
+        color: white;
+        font-size: 1.1rem;
+
+        &::placeholder {
+          /* Chrome, Firefox, Opera, Safari 10.1+ */
+          color: white;
+          opacity: 1; /* Firefox */
+          font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+            "Lucida Sans", Arial, sans-serif;
+        }
+
+        &:-ms-input-placeholder {
+          /* Internet Explorer 10-11 */
+          color: white;
+          font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+            "Lucida Sans", Arial, sans-serif;
+        }
+
+        &::-ms-input-placeholder {
+          /* Microsoft Edge */
+          color: white;
+          font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+            "Lucida Sans", Arial, sans-serif;
+        }
+      }
+    }
+
+    input[type='checkbox']{
+      width: 18px;
+      height: 18px;
+    }
+
+    .show {
+      display: flex;
+      align-items: center;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+
+      label {
+        color: white;
+        font-size: 1rem;
+        margin-left: 0.3rem;
+      }
+    }
+    .submitBtn {
+      margin: 1rem 0 2rem;
+    }
+
+    .create_account {
+      color: white;
+      font-size: 1.2rem;
+      text-decoration: unset;
+      transition: 200ms ease-in-out;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+      cursor: pointer;
+
+      &:hover {
+        border-bottom: 1px solid white;
+      }
+    }
+  }
+}

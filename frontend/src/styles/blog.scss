@@ -1,0 +1,94 @@
+.blog {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: $pColor;
+  width: 100%;
+  padding: 0 1rem 2rem;
+
+  .blogWrapper {
+    flex-grow: 1;
+
+    &_title {
+      color: white;
+      font-size: 2rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    &_listing {
+      &-block {
+        background-color: $sColor;
+        margin: 1rem 0;
+        padding: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 250ms ease-in-out;
+
+        &:hover {
+          background-color: #0a97a4;
+          // background-color: #62b0b7;
+        }
+
+        & > .list {
+          margin: 1rem 0;
+          display: flex;
+          justify-content: space-between;
+          font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+            "Lucida Sans", Arial, sans-serif;
+          color: white;
+
+          & > .title {
+            font-size: 1.2rem;
+            text-transform: capitalize;
+          }
+
+          & > .date {
+            font-size: 1.2rem;
+          }
+
+          & > .description {
+            font-size: 1rem;
+            color: white;
+          }
+
+          & > input,
+          textarea {
+            background-color: unset;
+            border: unset;
+            border-bottom: 1px solid black;
+            color: white;
+            outline: none;
+            margin: 0 0 2rem;
+            border: 1px solid white;
+            border-radius: 5px;
+            width: 100%;
+            padding: 1rem 0.5rem;
+
+            &::placeholder {
+              /* Chrome, Firefox, Opera, Safari 10.1+ */
+              color: white;
+              opacity: 1; /* Firefox */
+            }
+
+            &:-ms-input-placeholder {
+              /* Internet Explorer 10-11 */
+              color: white;
+            }
+
+            &::-ms-input-placeholder {
+              /* Microsoft Edge */
+              color: white;
+            }
+          }
+        }
+        .openBtn {
+          margin: 2rem 0 0;
+          button {
+            width: 300px;
+          }
+        }
+      }
+    }
+  }
+}

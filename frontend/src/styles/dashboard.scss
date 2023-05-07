@@ -1,0 +1,79 @@
+.dashboard {
+  @include bgGradient;
+  height: 100%;
+  padding: 1rem 5rem;
+
+  &_tabs {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    border: 2px solid rgb(130, 130, 130);
+    border-radius: 5px;
+    background-color: rgb(227, 227, 227);
+  }
+
+  &_table {
+    margin: 2rem 0 0;
+    table {
+      thead {
+        tr {
+          border-bottom: 1px solid black;
+          th {
+            padding: 0.5rem;
+            width: 300px;
+            color: white;
+            font-size: 1rem;
+            font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+              "Lucida Sans", Arial, sans-serif;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          border-bottom: 1px solid black;
+          td {
+            padding: 0.5rem;
+            color: white;
+            font-size: 1rem;
+            font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+              "Lucida Sans", Arial, sans-serif;
+          }
+
+          .description {
+            width: 400px;
+            height: 150px;
+            overflow: auto;
+          }
+
+          .true {
+            border: 1px solid rgb(10, 179, 142);
+            text-align: center;
+            background-color: rgb(9, 206, 9);
+            border-radius: 5px;
+            text-transform: capitalize;
+          }
+
+          .false {
+            border: 1px solid rgb(10, 179, 142);
+            text-align: center;
+            background-color: rgb(239, 46, 49);
+            border-radius: 5px;
+            text-transform: capitalize;
+          }
+        }
+
+        .actions {
+          display: flex;
+          align-items: center;
+          height: 100%;
+
+          button {
+            white-space: nowrap;
+            margin: 0 1rem;
+          }
+        }
+      }
+    }
+  }
+}

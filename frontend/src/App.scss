@@ -1,0 +1,39 @@
+$pColor: #0575e6;
+$sColor: #62b0b7;
+// $sColor: #0a97a4;
+// $tColor: rgba($base-color, 0.88);
+
+h1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+@mixin bgGradient {
+  background: #6f4b01; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0575e6,
+    #00f260
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0575e6,
+    #00f260
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.not_found {
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  margin: 2rem 0 0;
+}
+
+@import "styles";
