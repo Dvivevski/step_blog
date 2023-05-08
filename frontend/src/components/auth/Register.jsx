@@ -49,7 +49,7 @@ const Register = () => {
       });
     }
 
-    e.target.clear();
+    
   };
 
   return (
