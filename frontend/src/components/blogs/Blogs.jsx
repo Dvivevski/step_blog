@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { getAllBlogs } from "../../api/blogs";
 import { useNavigate } from "react-router-dom";
+import { formatDate } from "../../helper/objects";
 
 const Blogs = (props) => {
   const navigate = useNavigate();
@@ -44,16 +45,28 @@ const Blogs = (props) => {
             blogs.map((e, i) => (
               <div key={e?._id} className="blogWrapper_listing-block">
                 <div className="list">
-                  <h1 className="title">{e?.title}</h1>
-                  <h1 className="date">
-                    {new Date(e?.createdAt).toDateString()}
-                  </h1>
+                  <div className="item">
+                    <label htmlFor="">Author</label>
+                    <h1 className="title">{e?.createdBy?.userName}</h1>
+                  </div>
+                  <div className="item">
+                    <label htmlFor="">Date</label>
+                    <h1 className="date">{formatDate(e?.createdAt)}</h1>
+                  </div>
                 </div>
                 <div className="list">
-                  <p className="description">{e?.createdBy?.userName}</p>
+                  <div className="item">
+                    <label htmlFor="">Title</label>
+                    <h1 className="title">{e?.title}</h1>
+                  </div>
                 </div>
                 <div className="list">
-                  <p className="description">{displayValue(e?.description)}</p>
+                  <div className="item">
+                    <label htmlFor="">Description</label>
+                    <h1 className="description">
+                      {displayValue(e?.description)}
+                    </h1>
+                  </div>
                 </div>
 
                 <div className="openBtn">

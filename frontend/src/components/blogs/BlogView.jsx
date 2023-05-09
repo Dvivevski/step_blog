@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { getBlogByID } from "../../api/blogs";
 import { useNavigate, useParams } from "react-router-dom";
+import { formatDate } from "../../helper/objects";
 
 const BlogView = (props) => {
   const navigate = useNavigate();
@@ -43,16 +44,28 @@ const BlogView = (props) => {
         <div className="blogWrapper_listing">
           <div key={blog?._id} className="blogWrapper_listing-block">
             <div className="list">
-              <h1 className="title">{blog?.title}</h1>
-              <h1 className="date">
-                {new Date(blog?.createdAt).toDateString()}
-              </h1>
+              <div className="item">
+                <label htmlFor="">Title</label>
+                <h1 className="title">{blog?.title}</h1>
+              </div>
+              <div className="item">
+                <label htmlFor="">Date</label>
+                <h1 className="date">{formatDate(blog?.createdAt)}</h1>
+              </div>
             </div>
             <div className="list">
-              <p className="title">{blog?.createdBy?.userName}</p>
+              <div className="item">
+                <label htmlFor="">Date</label>
+                <h1 className="title">{blog?.createdBy?.userName}</h1>
+              </div>
             </div>
             <div className="list">
-              <p className="description">{displayValue(blog?.description)}</p>
+              <div className="item">
+                <label htmlFor="">Description</label>
+                <h1 className="description">
+                  {displayValue(blog?.description)}
+                </h1>
+              </div>
             </div>
           </div>
         </div>

@@ -16,7 +16,6 @@ const app = express();
 
 app.use(morgan("tiny"));
 
-
 app.use(
   cors({
     origin: "http://localhost:3000",

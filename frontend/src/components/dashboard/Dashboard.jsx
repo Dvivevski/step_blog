@@ -8,7 +8,7 @@ import {
 } from "../../reducers/users/actions";
 import { removeValueFromLocalStorage } from "../../helper/token";
 import { useDispatch, useSelector } from "react-redux";
-import { blogTableData, tabs } from "../../helper/objects";
+import { blogTableData, formatDate, tabs } from "../../helper/objects";
 import { deleteBlog, getAllBlogs } from "../../api/blogs";
 import { toast } from "react-toastify";
 
@@ -107,13 +107,13 @@ const Dashboard = (props) => {
           <div className="dashboard_tabs">
             {tabs.map((e, i) =>
               tabs?.length - 1 !== i ? (
-                <div className="col-md-3">
+                <div key={"tabs" + i} className="col-md-3">
                   <NavLink to={e.to} className="btn btn-primary w-100">
                     {e.label}
                   </NavLink>
                 </div>
               ) : (
-                <div className="col-md-3">
+                <div key={"tabs" + i} className="col-md-3">
                   <button onClick={logout} className="btn btn-primary w-100">
                     Logout
                   </button>
@@ -139,7 +139,7 @@ const Dashboard = (props) => {
                     <tr key={e?._id}>
                       {blogTableData.map((x, index) =>
                         blogTableData.length - 1 !== index ? (
-                          <td key={"data" + index}>
+                          <td key={e?._id + index + i}>
                             <p
                               className={
                                 x.key === "isActive" ? String(e[x.key]) : x.key
@@ -147,11 +147,13 @@ const Dashboard = (props) => {
                             >
                               {x.key === "description"
                                 ? displayValue(String(e[x.key]))
-                                : String(e[x.key])}{" "}
+                                : ["createdAt", "updatedAt"].includes(x.key)
+                                ? formatDate(new Date(e[x.key]))
+                                : String(e[x.key])}
                             </p>
                           </td>
                         ) : (
-                          <td>
+                          <td key={e?._id + index + i}>
                             <div className="actions">
                               <button
                                 className="btn btn-success"

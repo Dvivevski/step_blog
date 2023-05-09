@@ -14,8 +14,8 @@ const BlogForm = ({ isView, isEdit }) => {
   const { user } = useSelector((state) => state.users);
 
   const [loading, setLoading] = useState(false);
-  const [blog, setBlog] = useState({});
-  const [sBlog, setSBlog] = useState({});
+  const [blog, setBlog] = useState(null);
+  const [sBlog, setSBlog] = useState(null);
 
   // const toggleIsEdit = () => setIsEdit((prev) => !prev);
 
